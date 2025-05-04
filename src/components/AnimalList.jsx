@@ -28,6 +28,7 @@ export default function AnimalList() {
     }, []);
 
     return (
+<<<<<<< HEAD
         <div className="animal-card-grid">
         {animals.map((animal) => (
           <div className="animal-card" key={animal.id}>
@@ -43,5 +44,20 @@ export default function AnimalList() {
           </div>
         ))}
       </div>
+=======
+        <>
+            {animals.map((animal) => (
+                <div key={animal.id}>
+                    
+                    <p>{animal.name}</p>
+                    <p>{animal.description}</p>
+                    <img src={animal.image_Url} alt="animal pic" />
+
+
+                    
+                    </div>
+            ))}
+        </>
+>>>>>>> 7156a7c0fdd27299a4730a10a62e4d54a8f23b85
     );
 }
