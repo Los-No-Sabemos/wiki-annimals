@@ -30,7 +30,15 @@ export default function AnimalList() {
     return (
         <>
             {animals.map((animal) => (
-                <div key={animal.id}>{animal.name}</div>
+                <div key={animal.id}>
+                    
+                    <p>{animal.name}</p>
+                    <p>{animal.description}</p>
+                    <img src={animal.image_Url} alt="animal pic" />
+
+
+                    
+                    </div>
             ))}
         </>
     );
