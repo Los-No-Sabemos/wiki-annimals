@@ -29,7 +29,7 @@ export default function CreateNewAnimal () {
             region: animalRegion,
         }
 
-        axios.post(`${API_URL}/animals`, newAnimal)
+        axios.post(`${API_URL}/animals.json`, newAnimal)
             .then(() => {
                 console.log("Animal added!");
                 toast.success("🎉 New animal added!");

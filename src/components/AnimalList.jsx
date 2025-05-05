@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import "../styles/AnimalList.css"; 
 import { API_URL } from "../components/config/api";
+import { Link } from "react-router-dom";
 
 const overlayVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -87,6 +88,7 @@ export default function AnimalCarousel() {
             <p>Diet: {animal.diet}</p>
             <p>Region: {animal.region}</p>
             <p className="animal-fact">Fun Fact: {animal.fact}</p>
+            <Link to={`/AnimalDetails/${animal.id}`}> More Info </Link>
           </motion.div>
         </section>
       ))}
