@@ -6,16 +6,16 @@ import  Home  from './Pages/Home'
 import  AnimalDetails  from './Pages/AnimalDetails' 
 import  CreateNewAnimal  from './Pages/CreateNewAnimal'
 import  UpdateAnimal  from './Pages/UpdateAnimal'
+import Navbar from './components/Navbar';
 
 
 function App() {
 
   return (
     <>
-      <div>ELIANA AND FLORIAN ANNIMAL WORLD AND A BUNNY</div>
-
+    
+     <Navbar/>
       <Routes>
-
       <Route path="/" element={<Home/>}/>
       <Route path="/AnimalDetails/:id" element={<AnimalDetails />} />
       <Route path="/CreateNewAnimal" element={<CreateNewAnimal/>}/> 

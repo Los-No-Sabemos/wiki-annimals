@@ -1,45 +1,95 @@
+import React, { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import "../styles/AnimalList.css"; 
 import { API_URL } from "../components/config/api";
 
-export default function AnimalList() {
-    const [animals, setAnimals] = useState([]);
+const overlayVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1.4, ease: "easeOut" },
+  },
+};
 
-    
-
-    useEffect(() => {
-        axios
-            .get(`${API_URL}/animals.json`)
-            .then((response) => {
-                const animalData = response.data;
-                if (animalData) {
-                    const animalArr = Object.keys(animalData).map((id) => ({
-                        id,
-                        ...animalData[id],
-                    }));
-                    setAnimals(animalArr);
-                } else {
-                    setAnimals([]);
-                }
-            })
-            .catch((error) => {
-                console.log("No animals were found", error);
-            });
-    }, []);
-
-    return (
-        <>
-            {animals.map((animal) => (
-                <div key={animal.id}>
-                    
-                    <p>{animal.name}</p>
-                    <p>{animal.description}</p>
-                    <img src={animal.image_Url} alt="animal pic" />
+export default function AnimalCarousel() {
+  const [animals, setAnimals] = useState([]);
+  const carouselRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
 
-                    
-                    </div>
-            ))}
-        </>
-    );
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/animals.json`)
+      .then((response) => {
+        const animalData = response.data;
+        if (animalData) {
+          const animalArr = Object.keys(animalData).map((id) => ({
+            id,
+            ...animalData[id],
+          }));
+          setAnimals(animalArr);
+        } else {
+          setAnimals([]);
+        }
+      })
+      .catch((error) => {
+        console.log("No animals were found", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (!carouselRef.current) return;
+      e.preventDefault();
+      const direction = e.deltaY > 0 ? 1 : -1;
+      setCurrentIndex((prev) => {
+        const next = Math.min(
+          Math.max(prev + direction, 0),
+          animals.length - 1
+        );
+        scrollToSlide(next);
+        return next;
+      });
+    };
+
+    const scrollToSlide = (index) => {
+      if (carouselRef.current) {
+        const scrollX = index * window.innerWidth;
+        carouselRef.current.scrollTo({
+          left: scrollX,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener("wheel", handleWheel);
+      }
+    };
+  }, [animals]);
+
+  return (
+    <div ref={carouselRef} className="carousel-horizontal">
+      {animals.map((animal) => (
+        <section key={animal.id} className="animal-slide" style={{ backgroundImage: `url(${animal.image_Url})` }}>
+          <motion.div className="overlay" variants={overlayVariants} initial="hidden"whileInView="visible" viewport={{ once: true, amount: 0.6 }}>
+            <h2>{animal.name}</h2>
+            <p>Description: {animal.description}</p>
+            <p>Habitat:{animal.habitat}</p>
+            <p>Diet: {animal.diet}</p>
+            <p>Region: {animal.region}</p>
+            <p className="animal-fact">Fun Fact: {animal.fact}</p>
+          </motion.div>
+        </section>
+      ))}
+    </div>
+  );
 }
