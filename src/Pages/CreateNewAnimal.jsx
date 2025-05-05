@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import { API_URL } from "../components/config/api";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,7 +20,7 @@ export default function CreateNewAnimal () {
         e.preventDefault();
 
         const newAnimal = {
-            id: uuidv4(),
+         
             name: animalName,
             description: animalDescription,
             diet: animalDiet,
@@ -30,7 +29,7 @@ export default function CreateNewAnimal () {
             region: animalRegion,
         }
 
-        axios.post(API_URL, newAnimal)
+        axios.post(`${API_URL}/animals`, newAnimal)
             .then(() => {
                 console.log("Animal added!");
                 toast.success("🎉 New animal added!");

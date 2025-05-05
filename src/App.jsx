@@ -5,6 +5,7 @@ import  About  from './Pages/About'
 import  Home  from './Pages/Home' 
 import  AnimalDetails  from './Pages/AnimalDetails' 
 import  CreateNewAnimal  from './Pages/CreateNewAnimal'
+import  UpdateAnimal  from './Pages/UpdateAnimal'
 
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
       <Routes>
 
       <Route path="/" element={<Home/>}/>
-      <Route path="/AnimalDetails" element={<AnimalDetails/>}/>
-      <Route path="/CreateNewAnimal" element={<CreateNewAnimal/>}/>    
+      <Route path="/AnimalDetails/:id" element={<AnimalDetails />} />
+      <Route path="/CreateNewAnimal" element={<CreateNewAnimal/>}/> 
+      <Route path="/UpdateAnimal/:id" element={<UpdateAnimal />} />  
       <Route path="/About" element={<About/>}/>        
        
       </Routes>
