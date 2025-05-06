@@ -1,47 +1,156 @@
 .carousel-horizontal {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    width: 100vw;
-    height: 100vh;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch; /* scrolling touch on phone */
+}
+
+.carousel-horizontal::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Edge */
+}
+
+.animal-slide {
+  position: relative;
+  min-width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.overlay h1,
+.overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.animal-fact {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.filter {
+  position: absolute;
+  top: 80px;  
+  right: 20px;
+  z-index: 10;
+}
+
+.filter select {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  color: #333;
+  width: auto;
+  min-width: 80px;
+  max-width: 120px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='10' viewBox='0 0 24 24' width='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 10px;
+  padding-right: 18px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.filter select:hover {
+  background-color: rgba(240, 240, 240, 0.9);
+}
+
+.filter select:focus {
+  outline: none;
+  border-color: #6aab6a;
+  background-color: #f4fff4;
+} 
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 1rem;
+    max-width: 90%;
   }
-  
-  .carousel-horizontal::-webkit-scrollbar {
-    display: none; /*Chrome/Safari/Edge */
+
+  .overlay h1,
+  .overlay h2 {
+    font-size: 2rem;
   }
-  
-  
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .filter {
+    top: 70px; 
+    right: 10px;
+  }
+
+  .filter select {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+    min-width: 70px;
+    max-width: 100px;
+    background-position: right 4px center;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay h1,
+  .overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+  .filter-container-discrete {
+    top: 65px;
+    right: 8px;
+  }
+
+  .filter select {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.3rem;
+    min-width: 60px;
+    max-width: 90px;
+  }
+}
+
+@media (max-height: 500px) {
   .animal-slide {
-    position: relative;
-    min-width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    scroll-snap-align: start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
   }
-  
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    padding: 2rem;
-    max-width: 600px;
-    border-radius: 10px;
-    text-align: center;
-    backdrop-filter: blur(5px);
+    max-height: 90vh;
+    overflow-y: auto;
   }
-  
-  .overlay h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .overlay p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
+}

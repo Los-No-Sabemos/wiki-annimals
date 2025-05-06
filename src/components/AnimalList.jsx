@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import "../styles/AnimalList.css"; 
+import "../styles/AnimalList.css";
 import { API_URL } from "../components/config/api";
 import { Link } from "react-router-dom";
 
@@ -10,15 +10,15 @@ const overlayVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 1.4, ease: "easeOut" },
+    transition: { duration: 2, ease: "easeOut" },
   },
 };
 
 export default function AnimalCarousel() {
   const [animals, setAnimals] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState("All");
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-
 
   useEffect(() => {
     axios
@@ -77,21 +77,58 @@ export default function AnimalCarousel() {
     };
   }, [animals]);
 
+  
+  const regions = ["All", ...new Set(animals.map((animal) => animal.region))];
+
+  
+  const filteredAnimals =
+    selectedRegion === "All"
+      ? animals
+      : animals.filter((animal) => animal.region === selectedRegion);
+
+
+
   return (
-    <div ref={carouselRef} className="carousel-horizontal">
-      {animals.map((animal) => (
-        <section key={animal.id} className="animal-slide" style={{ backgroundImage: `url(${animal.image_Url})` }}>
-          <motion.div className="overlay" variants={overlayVariants} initial="hidden"whileInView="visible" viewport={{ once: true, amount: 0.6 }}>
-            <h2>{animal.name}</h2>
-            <p>Description: {animal.description}</p>
-            <p>Habitat:{animal.habitat}</p>
-            <p>Diet: {animal.diet}</p>
-            <p>Region: {animal.region}</p>
-            <p className="animal-fact">Fun Fact: {animal.fact}</p>
-            <Link to={`/AnimalDetails/${animal.id}`}> More Info </Link>
-          </motion.div>
-        </section>
-      ))}
+    <div>
+      
+      <div className="filter">
+        <select
+          id="regionFilter"
+          value={selectedRegion}
+          onChange={(e) => setSelectedRegion(e.target.value)}
+          aria-label="Filter animals by region"
+        >
+          {regions.map((region) => (
+            <option key={region} value={region}>
+              {region}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div ref={carouselRef} className="carousel-horizontal">
+        {filteredAnimals.map((animal) => (
+          <section
+            key={animal.id}
+            className="animal-slide"
+            style={{ backgroundImage: `url(${animal.image_Url})` }}
+          >
+            <motion.div
+              className="overlay"
+              variants={overlayVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.6 }}
+            >
+              <h2>{animal.name}</h2>
+              <p>Habitat: {animal.habitat}</p>
+              <p>Region: {animal.region}</p>
+              <p className="animal-fact">Fun Fact: {animal.fact}</p>
+              <Link to={`/AnimalDetails/${animal.id}`}>More Info</Link>
+            </motion.div>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }
