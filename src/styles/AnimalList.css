@@ -54,6 +54,42 @@
   font-weight: bold;
 }
 
+.filter {
+  position: absolute;
+  top: 80px;  
+  right: 20px;
+  z-index: 10;
+}
+
+.filter select {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  color: #333;
+  width: auto;
+  min-width: 80px;
+  max-width: 120px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='10' viewBox='0 0 24 24' width='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 10px;
+  padding-right: 18px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.filter select:hover {
+  background-color: rgba(240, 240, 240, 0.9);
+}
+
+.filter select:focus {
+  outline: none;
+  border-color: #6aab6a;
+  background-color: #f4fff4;
+} 
 
 @media (max-width: 768px) {
   .overlay {
@@ -69,6 +105,20 @@
   .overlay p {
     font-size: 1rem;
   }
+
+  .filter {
+    top: 70px; 
+    right: 10px;
+  }
+
+  .filter select {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+    min-width: 70px;
+    max-width: 100px;
+    background-position: right 4px center;
+    padding-right: 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -79,6 +129,17 @@
 
   .overlay p {
     font-size: 0.9rem;
+  }
+  .filter-container-discrete {
+    top: 65px;
+    right: 8px;
+  }
+
+  .filter select {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.3rem;
+    min-width: 60px;
+    max-width: 90px;
   }
 }
 
