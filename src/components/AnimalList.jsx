@@ -10,7 +10,7 @@ const overlayVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 1.4, ease: "easeOut" },
+    transition: { duration: 2, ease: "easeOut" },
   },
 };
 
@@ -83,9 +83,7 @@ export default function AnimalCarousel() {
         <section key={animal.id} className="animal-slide" style={{ backgroundImage: `url(${animal.image_Url})` }}>
           <motion.div className="overlay" variants={overlayVariants} initial="hidden"whileInView="visible" viewport={{ once: true, amount: 0.6 }}>
             <h2>{animal.name}</h2>
-            <p>Description: {animal.description}</p>
             <p>Habitat:{animal.habitat}</p>
-            <p>Diet: {animal.diet}</p>
             <p>Region: {animal.region}</p>
             <p className="animal-fact">Fun Fact: {animal.fact}</p>
             <Link to={`/AnimalDetails/${animal.id}`}> More Info </Link>

@@ -1,47 +1,95 @@
 .carousel-horizontal {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    width: 100vw;
-    height: 100vh;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch; /* scrolling touch on phone */
+}
+
+.carousel-horizontal::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Edge */
+}
+
+.animal-slide {
+  position: relative;
+  min-width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.overlay h1,
+.overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.animal-fact {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 1rem;
+    max-width: 90%;
   }
-  
-  .carousel-horizontal::-webkit-scrollbar {
-    display: none; /*Chrome/Safari/Edge */
+
+  .overlay h1,
+  .overlay h2 {
+    font-size: 2rem;
   }
-  
-  
+
+  .overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay h1,
+  .overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-height: 500px) {
   .animal-slide {
-    position: relative;
-    min-width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    scroll-snap-align: start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
   }
-  
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    padding: 2rem;
-    max-width: 600px;
-    border-radius: 10px;
-    text-align: center;
-    backdrop-filter: blur(5px);
+    max-height: 90vh;
+    overflow-y: auto;
   }
-  
-  .overlay h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .overlay p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
+}
