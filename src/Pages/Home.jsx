@@ -1,4 +1,4 @@
-import AnimalList from "../components/animalList" 
+import AnimalList from "../components/animalList.jsx" 
 
 export default function Home(){
    return(
