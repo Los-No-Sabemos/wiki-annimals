@@ -1,5 +1,5 @@
 import "../styles/About.css";
-import AboutVideoHD from "../styles/assets/AboutVideoHD.mp4";
+import AboutVideoHD from "../assets/AboutVideoHD.mp4";
 import { motion } from "framer-motion";
 
 const overlayVariants = {

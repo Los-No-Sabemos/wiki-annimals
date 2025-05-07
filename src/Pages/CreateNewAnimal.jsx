@@ -59,7 +59,7 @@ export default function CreateNewAnimal () {
     return (
         
         <div className="create-animal-container">
-            <img src="src\styles\assets\BackgroundCreateNew\CreateNewBackg.jpg" alt="background" className="create-new-background" />
+            <img src="src\assets\BackgroundCreateNew\CreateNewBackg.jpg" alt="background" className="create-new-background" />
             <motion.div  className="create-animal-form" variants={overlayVariants}
             initial="hidden"
             whileInView="visible"
