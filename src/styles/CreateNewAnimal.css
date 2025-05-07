@@ -31,7 +31,7 @@
     
 }
 
- h2:hover {
+ .h2-title:hover {
     color: #e5e2c4;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(217, 111, 111, 0.9);
@@ -39,7 +39,7 @@
     transform: scale(1.05);
  }
 
-h2:after {
+.h2-title:after {
      
      position: absolute;
      bottom: -2px;
@@ -50,7 +50,7 @@ h2:after {
      transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
 
-h2:hover:after {
+.h2-title:hover:after {
      width: 100%;
      }
 
@@ -59,7 +59,7 @@ form {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.414);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
