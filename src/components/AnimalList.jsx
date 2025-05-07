@@ -78,57 +78,55 @@ export default function AnimalList() {
   }, [animals]);
 
   
-  const regions = ["All", ...new Set(animals.map((animal) => animal.region))];
+  const regions = ["All", ...new Set(animals.flatMap((animal) => animal.region || []))];
 
   
   const filteredAnimals =
-    selectedRegion === "All"
-      ? animals
-      : animals.filter((animal) => animal.region === selectedRegion);
+  selectedRegion === "All"
+    ? animals
+    : animals.filter((animal) => animal.region && animal.region.includes(selectedRegion));
 
 
-
-  return (
-    <div>
-      
-      <div className="filter">
-        <select
-          id="regionFilter"
-          value={selectedRegion}
-          onChange={(e) => setSelectedRegion(e.target.value)}
-          aria-label="Filter animals by region"
-        >
-          {regions.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div ref={carouselRef} className="carousel-horizontal">
-        {filteredAnimals.map((animal) => (
-          <section
-            key={animal.id}
-            className="animal-slide"
-            style={{ backgroundImage: `url(${animal.image_Url})` }}
+    return (
+      <div>
+        <div className="filter">
+          <select
+            id="regionFilter"
+            value={selectedRegion}
+            onChange={(e) => setSelectedRegion(e.target.value)}
+            aria-label="Filter animals by region"
           >
-            <motion.div
-              className="overlay"
-              variants={overlayVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.6 }}
+            {regions.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
+        </div>
+  
+        <div ref={carouselRef} className="carousel-horizontal">
+          {filteredAnimals.map((animal) => (
+            <section
+              key={animal.id}
+              className="animal-slide"
+              style={{ backgroundImage: `url(${animal.image_Url})` }}
             >
-              <h2>{animal.name}</h2>
-              <p>Habitat: {animal.habitat}</p>
-              <p>Region: {animal.region}</p>
-              <p className="animal-fact">Fun Fact: {animal.fact}</p>
-              <Link to={`/AnimalDetails/${animal.id}`}>More Info</Link>
-            </motion.div>
-          </section>
-        ))}
+              <motion.div
+                className="overlay"
+                variants={overlayVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.6 }}
+              >
+                <h2>{animal.name}</h2>
+                <p>Habitat: {animal.habitat}</p>
+                <p>Region: {animal.region.join(", ")}</p> 
+                <p className="animal-fact">Fun Fact: {animal.fact}</p>
+                <Link to={`/AnimalDetails/${animal.id}`}>More Info</Link>
+              </motion.div>
+            </section>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
