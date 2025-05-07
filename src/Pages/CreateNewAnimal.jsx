@@ -23,7 +23,7 @@ export default function CreateNewAnimal () {
     const  [animalDiet, setAnimalDiet] = useState("");
     const  [animalHabitat, setAnimalHabitat] = useState("");
     const  [animalImageUrl, setAnimalImageUrl] = useState("");
-    const  [animalRegion, setAnimalRegion] = useState("");
+    const [animalRegion, setAnimalRegion] = useState([]);
 
     const navigate = useNavigate();
 
@@ -117,15 +117,24 @@ export default function CreateNewAnimal () {
                 />
             </label>
 
-            <label>Region
-                <input
-                type="text"
-                name="animalRegion"
-                value={animalRegion}
-                placeholder="Where is this animal from?" 
-                onChange={(e) => setAnimalRegion(e.target.value)}
-                />
-            </label>
+<label>Region (Select one or more)
+  <select
+    multiple
+    value={animalRegion}
+    onChange={(e) =>
+      setAnimalRegion(Array.from(e.target.selectedOptions, option => option.value))
+    }
+    style={{ height: "100px" }} 
+  >
+    <option value="North America">North America</option>
+    <option value="South America">South America</option>
+    <option value="Africa">Africa</option>
+    <option value="Asia">Asia</option>
+    <option value="Australia">Australia</option>
+    <option value="Europe">Europe</option>
+    <option value="Antarctica">Antarctica</option>
+  </select>
+</label>
 
             <button type="submit">Create Animal</button>
                 </form>   
