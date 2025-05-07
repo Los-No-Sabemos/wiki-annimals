@@ -5,6 +5,16 @@ import { API_URL } from "../components/config/api";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "../styles/CreateNewAnimal.css";
+import { motion } from "framer-motion";
+
+const overlayVariants = {
+   hidden: { opacity: 0, x: -50 },
+   visible: {
+     opacity: 1,
+     x: 0,
+     transition: { duration: 1.4, ease: "easeOut" },
+   },
+ };
 
 export default function CreateNewAnimal () {
 
@@ -47,8 +57,14 @@ export default function CreateNewAnimal () {
     }
 
     return (
-        <>
-        <div className="create-animal-form">
+        
+        <div className="create-animal-container">
+            <img src="src\styles\assets\BackgroundCreateNew\CreateNewBackg.jpg" alt="background" className="create-new-background" />
+            <motion.div  className="create-animal-form" variants={overlayVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+          >
             <h2>Create New Animal</h2>
             <form onSubmit={handleSubmit}>
             <label>Animal Name
@@ -56,57 +72,57 @@ export default function CreateNewAnimal () {
                 type="text"
                 name="animalName"
                 value={animalName}
-                placeholder="Animal Name"
+                placeholder="What's the animal name?"
                 onChange={(e) => setAnimalName(e.target.value)}
                 />
             </label>
 
-            <label>Animal Description
+            <label>Description
                 <input
                 type="text"
                 name="animalDescription"
                 value={animalDescription}
-                placeholder="Animal Description"
+                placeholder="What can you tell us about this animal?"
                 onChange={(e) => setAnimalDescription(e.target.value)}
                 />
             </label>
 
-            <label>Animal Diet
+            <label>Diet
                 <input
                 type="text"
                 name="animalDiet"
                 value={animalDiet}
-                placeholder="Animal Diet"
+                placeholder="What does this animal eat?"
                 onChange={(e) => setAnimalDiet(e.target.value)} 
                 />
             </label>
 
-            <label>Animal Habitat
+            <label>Habitat
                 <input
                 type="text"
                 name="animalHabitat"    
                 value={animalHabitat}
-                placeholder="Animal Habitat"
+                placeholder="Where does this animal live?"
                 onChange={(e) => setAnimalHabitat(e.target.value)}
                 />
             </label>
 
-            <label>Animal Image URL
+            <label>Image URL
                 <input
                 type="text"
                 name="animalImageUrl"
                 value={animalImageUrl}
-                placeholder="Animal Image URL"
+                placeholder="What does this animal look like?"
                 onChange={(e) => setAnimalImageUrl(e.target.value)}
                 />
             </label>
 
-            <label>Animal Region
+            <label>Region
                 <input
                 type="text"
                 name="animalRegion"
                 value={animalRegion}
-                placeholder="Animal Region" 
+                placeholder="Where is this animal from?" 
                 onChange={(e) => setAnimalRegion(e.target.value)}
                 />
             </label>
@@ -114,9 +130,9 @@ export default function CreateNewAnimal () {
             <button type="submit">Create Animal</button>
                 </form>   
 
-                </div>
+                </motion.div>
                 <ToastContainer position="bottom-left" autoClose={1800} hideProgressBar={false} />    
-                </> 
+                </div>
     )
 
 
