@@ -75,7 +75,7 @@ export default function About() {
               <p>We are grateful for the support from <span className="highlight">Luis Junco</span> and 
               <span className="highlight">Neko</span>!</p>
             </motion.section>
-          </motion.div>
+            </motion.div>
         </div>
       </div>
     </div>
