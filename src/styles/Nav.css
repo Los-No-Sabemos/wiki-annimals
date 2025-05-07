@@ -1,5 +1,5 @@
 .navbar {
-  background-color: forestgreen;
+  background-color: #333;
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   font-weight: bold;
 }
 
-/* Nav links - desktop default */
+
 .nav-links {
   display: flex;
   gap: 20px;
@@ -31,7 +31,7 @@
   color: #cdeac0;
 }
 
-/* Hamburger - hidden on desktop */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -46,7 +46,7 @@
   transition: 0.3s;
 }
 
-/* Mobile styles */
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -57,7 +57,7 @@
     position: absolute;
     top: 60px;
     right: 24px;
-    background-color: #3a5f0b;
+    background-color: #333;
     flex-direction: column;
     gap: 12px;
     padding: 12px 20px;
