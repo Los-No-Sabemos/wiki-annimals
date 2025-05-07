@@ -23,25 +23,38 @@
   }
   
   .about-content {
-    padding: 2rem;
+    padding: 7rem;
     color: white;
     max-width: 100%;
-    margin: 0 auto;
+    margin: auto;
     position: relative;
     z-index: 1;
   }
-  
+
   .about-section {
-    
-    margin-bottom: 2rem;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 1.5rem;
     border-radius: 10px;
     
+    
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
   }
+  
+  .about-section:hover {
+    background-color: rgba(15, 15, 15, 0.85); 
+    transform: scale(1.03) translateY(-4px);
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  
+  }
+  
   
   .main-section {
     margin-bottom: 2rem;
+    max-width: 60%;
+    margin: auto;
   }
   
   .horizontal-sections {
@@ -55,14 +68,93 @@
   .horizontal-section {
     flex: 1;
     min-width: 250px; 
+    margin-top: 2rem;
   }
   
   .highlight {
-    color: #4CAF50;
+    color: #e5e2c4;
     font-weight: bold;
+    text-shadow: 0 0 10px rgba(229, 155, 155, 0.393);
+    
+    position: relative;
+    display: inline-block;
+  }
+  
+  .highlight:hover {
+    color: #e5e2c4;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(217, 111, 111, 0.9);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1.05);
+  }
+  
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .highlight:hover::after {
+    width: 100%;
   }
   
   .tech {
-    color: #2196F3;
+    color: #dec98a;
     font-weight: bold;
+  }
+
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  
+  
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: 1.1em;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+
+  }
+
+  .about-section.main-section p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    text-align: center;
   }

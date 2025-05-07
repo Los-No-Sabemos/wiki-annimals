@@ -55,8 +55,8 @@ export default function About() {
               variants={overlayVariants}
             >
               <h2>Technologies Used</h2>
-              <p>This project was built using <span className="tech">React</span>, <span className="tech">React Router</span>,
-              <span className="tech">Axios</span>, <span className="tech">Tailwind</span> among others.</p>
+              <p>This project was built using <span className="highlight">React</span>, <span className="highlight">React Router </span>, 
+              <span className="highlight"> Axios</span>, <span className="highlight">Tailwind</span> among others.</p>
             </motion.section>
 
             <motion.section 
@@ -72,8 +72,8 @@ export default function About() {
               variants={overlayVariants}
             >
               <h2>Special Thanks 🐾</h2>
-              <p>We are grateful for the support from <span className="highlight">Luis Junco</span> and 
-              <span className="highlight">Neko</span>!</p>
+              <p>We are grateful for the support from <span className="highlight">Luis Junco </span> and  
+               <span className="highlight"> Neko</span>!</p>
             </motion.section>
             </motion.div>
         </div>
