@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../styles/AnimalList.css";
-import { API_URL } from "../components/config/api";
+import { API_URL } from "./config/api";
 import { Link } from "react-router-dom";
 
 const overlayVariants = {
