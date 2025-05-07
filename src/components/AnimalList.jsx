@@ -14,7 +14,7 @@ const overlayVariants = {
   },
 };
 
-export default function AnimalCarousel() {
+export default function AnimalList() {
   const [animals, setAnimals] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("All");
   const carouselRef = useRef(null);
