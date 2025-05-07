@@ -108,7 +108,7 @@
     color: #dec98a;
     font-weight: bold;
   }
-
+/* 
   :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -122,17 +122,17 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+  } */
   
   
   
-  body {
+  /* body {
     margin: 0;
     display: flex;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-  }
+  } */
   
   h1 {
     font-size: 1.5em;

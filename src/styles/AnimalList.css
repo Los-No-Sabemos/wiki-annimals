@@ -22,7 +22,7 @@
   scroll-snap-align: start;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -36,6 +36,38 @@
   text-align: center;
   word-wrap: break-word;
   box-sizing: border-box;
+}
+
+.overlay a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem; 
+  background-color: #646cff; 
+  color: #fff;
+  font-weight: 600; 
+  font-size: 1.1rem;
+  text-decoration: none; 
+  border-radius: 30px; 
+  text-align: center;
+  transition: all 0.3s ease-in-out; 
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3); 
+  margin-top: 1rem;
+  cursor: pointer; 
+}
+
+.overlay a:hover {
+  background-color: #535bf2; 
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(100, 108, 255, 0.4); 
+}
+
+.overlay a:focus {
+  outline: none;
+  border: 2px solid #6aab6a; 
+}
+
+.overlay a:active {
+  transform: translateY(0); 
+  box-shadow: 0 2px 6px rgba(100, 108, 255, 0.3); 
 }
 
 .overlay h1,
@@ -103,7 +135,7 @@ a:hover {
 @media (max-width: 768px) {
   .overlay {
     padding: 1rem;
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .overlay h1,
@@ -156,6 +188,7 @@ a:hover {
   .animal-slide {
     align-items: flex-start;
     padding-top: 2rem;
+    justify-content: center;
   }
 
   .overlay {
