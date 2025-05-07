@@ -23,7 +23,7 @@ export default function CreateNewAnimal () {
     const  [animalDiet, setAnimalDiet] = useState("");
     const  [animalHabitat, setAnimalHabitat] = useState("");
     const  [animalImageUrl, setAnimalImageUrl] = useState("");
-    const [animalRegion, setAnimalRegion] = useState("");
+    const [animalRegion, setAnimalRegion] = useState([]);
 
     const navigate = useNavigate();
 
@@ -117,7 +117,7 @@ export default function CreateNewAnimal () {
                 />
             </label>
 
-            <label>Region (Select one or more)
+<label>Region (Select one or more)
   <select
     multiple
     value={animalRegion}
