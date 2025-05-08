@@ -111,7 +111,7 @@ export default function CreateNewAnimal () {
 
             <label>Image URL
                 <input
-                type="text"
+                type="url"
                 name="animalImageUrl"
                 value={animalImageUrl}
                 placeholder="What does this animal look like?"
