@@ -115,11 +115,12 @@ export default function AnimalList() {
         </div>
   
         <div ref={carouselRef} className="carousel-horizontal">
-          {filteredAnimals.map((animal) => (
+          {filteredAnimals.map((animal) => {
+            return (
             <section
               key={animal.id}
               className="animal-slide"
-              style={{ backgroundImage: `url(${animal.image_Url})` }}
+             style={{ backgroundImage: `url("${animal.image_Url}")` }}
             >
               <motion.div
                 className="overlay"
@@ -135,7 +136,7 @@ export default function AnimalList() {
                 <Link to={`/AnimalDetails/${animal.id}`}>More Info</Link>
               </motion.div>
             </section>
-          ))}
+          )})}
         </div>
       </div>
     );
