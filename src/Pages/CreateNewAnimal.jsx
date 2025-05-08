@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "../styles/CreateNewAnimal.css";
 import { motion } from "framer-motion";
+import backgroundImage from '../assets/BackgroundCreateNew/CreateNewBackg.jpg';
 
 const overlayVariants = {
    hidden: { opacity: 0, x: -50 },
@@ -59,7 +60,7 @@ export default function CreateNewAnimal () {
     return (
         
         <div className="create-animal-container">
-            <img src="src\assets\BackgroundCreateNew\CreateNewBackg.jpg" alt="background" className="create-new-background" />
+            <img src={backgroundImage} alt="background" className="create-new-background" />
             
             <motion.div variants={overlayVariants}
             initial="hidden"
