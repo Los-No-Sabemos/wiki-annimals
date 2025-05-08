@@ -118,24 +118,25 @@ export default function CreateNewAnimal () {
                 />
             </label>
 
-<label>Region (Select one or more)
-  <select
-    multiple
-    value={animalRegion}
-    onChange={(e) =>
-      setAnimalRegion(Array.from(e.target.selectedOptions, option => option.value))
-    }
-    style={{ height: "100px" }} 
-  >
-    <option value="North America">North America</option>
-    <option value="South America">South America</option>
-    <option value="Africa">Africa</option>
-    <option value="Asia">Asia</option>
-    <option value="Australia">Australia</option>
-    <option value="Europe">Europe</option>
-    <option value="Antarctica">Antarctica</option>
-  </select>
-</label>
+            <div className="filter">
+            <label>Region (Select one or hold "CTRL" to select more)</label>
+            <select
+              multiple
+              value={animalRegion}
+              onChange={(e) => {
+                const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+                setAnimalRegion(selectedOptions);
+              }}
+            >
+              <option value="North America">North America</option>
+              <option value="South America">South America</option>
+              <option value="Africa">Africa</option>
+              <option value="Asia">Asia</option>
+              <option value="Australia">Australia</option>
+              <option value="Europe">Europe</option>
+              <option value="Antarctica">Antarctica</option>
+            </select>
+          </div>
 
             <button type="submit">Create Animal</button>
                 </form>   
@@ -155,7 +156,7 @@ export default function CreateNewAnimal () {
                 <p>Let's get started! 🐾</p>
                 </motion.div>
 
-                <ToastContainer position="bottom-left" autoClose={1800} hideProgressBar={false} />    
+                <ToastContainer position="bottom-left" autoClose={1800} hideProgressBar={false}> New Animal Added! </ToastContainer>    
                 </div>
     )
 
