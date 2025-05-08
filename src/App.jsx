@@ -23,7 +23,6 @@ function App() {
       <Route path="/UpdateAnimal/:id" element={<UpdateAnimal />} />  
       <Route path="/About" element={<About/>}/>    
       <Route path="*" element={<NotFound />} />    
-       
       </Routes>
         
     </>
