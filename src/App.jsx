@@ -7,6 +7,7 @@ import  AnimalDetails  from './Pages/AnimalDetails'
 import  CreateNewAnimal  from './Pages/CreateNewAnimal'
 import  UpdateAnimal  from './Pages/UpdateAnimal'
 import Navbar from './components/Navbar';
+import NotFound from './Pages/NotFound';
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
       <Route path="/AnimalDetails/:id" element={<AnimalDetails />} />
       <Route path="/CreateNewAnimal" element={<CreateNewAnimal/>}/> 
       <Route path="/UpdateAnimal/:id" element={<UpdateAnimal />} />  
-      <Route path="/About" element={<About/>}/>        
+      <Route path="/About" element={<About/>}/>    
+      <Route path="*" element={<NotFound />} />    
        
       </Routes>
         

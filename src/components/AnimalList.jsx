@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import "../styles/AnimalList.css";
 import { API_URL } from "./config/api";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const overlayVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -19,6 +19,7 @@ export default function AnimalList() {
   const [selectedRegion, setSelectedRegion] = useState("All");
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const location = useLocation(); 
 
   useEffect(() => {
     axios
@@ -86,6 +87,15 @@ export default function AnimalList() {
     ? animals
     : animals.filter((animal) => animal.region && animal.region.includes(selectedRegion));
 
+    useEffect(() => {
+      if (location.pathname === "/") {
+        setSelectedRegion("All"); 
+        setCurrentIndex(0); 
+        if (carouselRef.current) {
+          carouselRef.current.scrollTo({ left: 0, behavior: "smooth" }); 
+        }
+      }
+    }, [location]); 
 
     return (
       <div>
@@ -120,8 +130,8 @@ export default function AnimalList() {
               >
                 <h2>{animal.name}</h2>
                 <p>Habitat: {animal.habitat}</p>
+                <p>Diet: {animal.diet}</p>
                 <p>Region: {animal.region.join(", ")}</p> 
-                <p className="animal-fact">Fun Fact: {animal.fact}</p>
                 <Link to={`/AnimalDetails/${animal.id}`}>More Info</Link>
               </motion.div>
             </section>
