@@ -22,7 +22,7 @@ function App() {
       <Route path="/CreateNewAnimal" element={<CreateNewAnimal/>}/> 
       <Route path="/UpdateAnimal/:id" element={<UpdateAnimal />} />  
       <Route path="/About" element={<About/>}/>    
-      <Route path="*" element={<NotFound />} />    
+      <Route path="*" element={<NotFound/>} />    
       </Routes>
         
     </>
