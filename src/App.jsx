@@ -8,6 +8,7 @@ import  CreateNewAnimal  from './Pages/CreateNewAnimal'
 import  UpdateAnimal  from './Pages/UpdateAnimal'
 import Navbar from './components/Navbar';
 import NotFound from './Pages/NotFound';
+import WikkiDictionary from './Pages/WikkiDictionary';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
      <Navbar/>
       <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/WikkiDictionary" element={<WikkiDictionary/>}/>
       <Route path="/AnimalDetails/:id" element={<AnimalDetails />} />
       <Route path="/CreateNewAnimal" element={<CreateNewAnimal/>}/> 
       <Route path="/UpdateAnimal/:id" element={<UpdateAnimal />} />  
