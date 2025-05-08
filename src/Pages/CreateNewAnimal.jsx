@@ -60,13 +60,14 @@ export default function CreateNewAnimal () {
         
         <div className="create-animal-container">
             <img src="src\assets\BackgroundCreateNew\CreateNewBackg.jpg" alt="background" className="create-new-background" />
-            <motion.div  className="create-animal-form" variants={overlayVariants}
+            
+            <motion.div variants={overlayVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.6 }}
           >
-            <h2>Create New Animal</h2>
-            <form onSubmit={handleSubmit}>
+            <h3 >Create New Animal</h3>
+            <form className="form" onSubmit={handleSubmit}>
             <label>Animal Name
                 <input
                 type="text"
@@ -140,6 +141,20 @@ export default function CreateNewAnimal () {
                 </form>   
 
                 </motion.div>
+
+                <motion.div className="create-animal-card" variants={overlayVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+            >
+                <h1>Animal Encyclopedia</h1>
+                <h2>Welcome to the Animal Encyclopedia! 🦁</h2>
+                <p>Here you can create a new animal entry. Please fill in the details below.</p>
+                <p>Once you submit the form, you'll be redirected to the home page.</p>
+                <p>Thank you for contributing to our encyclopedia!</p>
+                <p>Let's get started! 🐾</p>
+                </motion.div>
+
                 <ToastContainer position="bottom-left" autoClose={1800} hideProgressBar={false} />    
                 </div>
     )
