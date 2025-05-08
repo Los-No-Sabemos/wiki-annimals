@@ -2,11 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.082);
-    position: relative;
+   
 }
 
 .update-animal-background {
@@ -17,6 +16,7 @@
     width: 100vw;
     height: 100vh;
     z-index: -1;
+    background-color: rgba(0, 0, 0, 0.082);
     
 }
 
@@ -161,6 +161,12 @@ button[type="submit"]:hover {
 
 /* Laptop 1440px */
 @media (max-width: 1440px) {
+
+    .update-animal-background {
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+    }
     .update-title {
         font-size: 1.6rem;
         margin-top: 4rem;
@@ -170,17 +176,37 @@ button[type="submit"]:hover {
     
     .update-form {
         margin-right: 30%;
-        width: 35%;
+        width: 55%;
+        
+        
     }
+
+    .update-title {
+        margin-bottom: 1.8rem;
+        font-size: 1.3rem;
+        width: 19%; 
+    }
+
+    label {
+        font-size: 1rem;
+    }
+    input {
+        width:95%;
+        font-size: 0.9rem;
+    }
+
+    .form-filter-update select {
+        font-size: 0.9rem; ;
+    }
+
 }
 
 /* Laptop 1024px */
 @media (max-width: 1024px) {
     .update-title {
         margin-right: 5%;
-        margin-top: 9rem;
         width: 30%;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .update-form {
@@ -190,7 +216,7 @@ button[type="submit"]:hover {
     }
 
     input {
-        padding: 0.8rem;
+        
         font-size: 0.9rem;
         width: 95%;
     }
@@ -216,7 +242,7 @@ button[type="submit"]:hover {
     .update-form {
         margin-right: 0;
         width: 70%;
-        padding: 1.5rem;
+        
     }
     
     button[type="submit"] {
@@ -224,7 +250,7 @@ button[type="submit"]:hover {
     }
 
     input {
-        padding: 0.7rem;
+        
         font-size: 1rem;
         width: 95%;
     }
@@ -232,23 +258,24 @@ button[type="submit"]:hover {
 
 /* Mobile L 425px */
 @media (max-width: 425px) {
+
+  
     .update-title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         width: 80%;
-        padding: 0.4rem;
+       
     }
     
     .update-form {
         width: 85%;
-        padding: 1.2rem;
     }
     
     label {
-        font-size: rem;
+        font-size: 1rem;
     }
     
     input {
-        padding: 0.6rem;
+        
         font-size: 0.9rem;
     }
     
@@ -268,7 +295,7 @@ button[type="submit"]:hover {
     
     .update-form {
         width: 90%;
-        padding: 1rem;
+        
     }
     
     label {
