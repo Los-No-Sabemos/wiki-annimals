@@ -68,7 +68,7 @@ form:hover {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
 }
 
-label {
+.label {
     display: block;
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
@@ -202,69 +202,12 @@ button[type="submit"]:hover {
     background-color: #f4fff4;
   } 
 
-
-  @media (max-width: 1440px) {
-
-    h3 {
-        font-size: 1.8rem;
-        
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    p{
-        font-size: 1rem;
-    }
-
-    .create-animal-card{
-        margin-right: 4%;
-    }
-  }
+  @media (max-width: 1024px) {
 
 
-@media (max-width: 768px) {
     .create-animal-container {
-        flex-direction: column;
         
-    }
-    
-    h3 {
-        font-size: 1.5rem;
-        margin-left: 0;
-    }
-    
-    form {
-        padding: 1.5rem;
-        margin-left: 5%;
-        width: 85%;
-    }
-
-    input {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-        width: 95%;
-    }
-    
-    .create-animal-card {
-        display: none; 
-    }
-    
-    button[type="submit"] {
-        width: 100%;
-        max-width: none;
-    }
-
-   
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .create-animal-container {
+        gap: 2rem;
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -272,37 +215,17 @@ button[type="submit"]:hover {
     
     form {
         width: 50%;
-        margin-left: 0;
-    }
-    
-    .create-animal-card {
-        width: 40%;
-        margin-left: 5%;
-        margin-top: 1rem;   
-    }
-
-    
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    
-    .create-animal-container {
-        
-        gap: 2rem;
-    }
-    
-    form {
         max-width: 100%;
-        margin-top: 4rem;
-        margin-right: 20rem;
-        margin-left: 5rem;
+        margin: 4rem 20rem 0 5rem;
     }
     
     .create-animal-card {
         max-width: 300px;
         padding: 1.2rem;
-        margin-bottom: 2rem;
-        font-size: 0.8rem;
+        margin-bottom: 20rem;
+        width: 50%;
+        margin-left: 0;
+         
     }
     
     h3 {
@@ -325,7 +248,51 @@ button[type="submit"]:hover {
         padding: 0.7rem 1.2rem;
         font-size: 1rem;
     }
+   
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+    p, label, input, button { font-size: 0.9rem; }
 }
+
+
+
+@media (max-width: 768px) {
+    .create-animal-container {
+        flex-direction: column;
+        
+    }
+    
+    form {
+        padding: 1.5rem;
+        margin-left: 5%;
+        width: 85%;
+        font-size: 0.9rem;
+    }
+
+    input {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        width: 95%;
+    }
+
+    label {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .create-animal-card {
+        display: none; 
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+        max-width: none;
+    }
+
+   
+}
+
 
 
 @media (max-width: 425px) {
@@ -342,9 +309,10 @@ button[type="submit"]:hover {
     }
     
     form {
-        width: 90%;
+        width: 70%;
         margin: 0 auto;
         backdrop-filter: blur(1px);
+        
     }
     
     label {
@@ -354,7 +322,7 @@ button[type="submit"]:hover {
     
     input {
         padding: 0.6rem;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         margin-bottom: 1rem;
     }
     
@@ -377,9 +345,7 @@ button[type="submit"]:hover {
 
 @media (max-width: 375px) {
     h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.8rem;
-        margin-top: 2rem;
+        display: none;
     }
     
     form {
@@ -388,8 +354,8 @@ button[type="submit"]:hover {
         margin: 0 auto;
     }
     
-    label {
-        font-size: 0.95rem;
+    .label {
+        font-size: 0.5rem;
     }
     
     input {
@@ -404,13 +370,19 @@ button[type="submit"]:hover {
 
 
 @media (max-width: 320px) {
+    
+    .create-animal-container{
+        padding:0;
+    }
+    
     h3 {
-        font-size: 1.2rem;
+        display: none;
     }
     
     form {
         
         width: 85%;
+        padding-top: 1rem;
         
     }
     
