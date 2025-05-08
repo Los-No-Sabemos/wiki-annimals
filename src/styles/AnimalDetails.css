@@ -1,0 +1,135 @@
+.carousel-horizontal {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch; /* Scrolling touch on phone */
+  }
+  
+  .carousel-horizontal::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Edge */
+  }
+  
+ 
+  .animal-slide {
+    position: relative;
+    min-width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  
+  .overlay {
+    color: #ffffff;
+    padding: 2rem;
+    max-width: 650px;
+    width: 100%;
+    border-radius: 12px;
+    text-align: center;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  .overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+    color: #f7f3f3;
+    letter-spacing: 0.5px;
+  }
+  
+ 
+  .overlay p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  
+  .animal-fact {
+    font-weight: 600;
+    color: #c0af14;
+    margin-top: 1rem;
+  }
+  
+  .animal-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .update-btn {
+    background-color: #4caf50; 
+    color: white;
+  }
+  
+  .update-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .delete-btn {
+    background-color: #f44336; 
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #da190b;
+    transform: scale(1.05);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .overlay {
+      padding: 1.5rem;
+      max-width: 100%;
+    }
+  
+    .overlay h2 {
+      font-size: 2.2rem;
+    }
+  
+    .overlay p {
+      font-size: 1rem;
+    }
+  
+    .animal-buttons {
+      flex-direction: column; 
+    }
+  
+    .btn {
+      width: 100%; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .overlay h2 {
+      font-size: 1.8rem;
+    }
+  
+    .overlay p {
+      font-size: 0.9rem;
+    }
+  }
