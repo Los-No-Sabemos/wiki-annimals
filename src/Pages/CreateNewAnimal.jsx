@@ -119,7 +119,7 @@ export default function CreateNewAnimal () {
                 />
             </label>
 
-            <div className="filter">
+            <div className="form-filter">
             <label>Region (Select one or hold "CTRL" to select more)</label>
             <select
               multiple

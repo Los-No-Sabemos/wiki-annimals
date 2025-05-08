@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import axios from "axios"
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import "../styles/UpdateAnimal.css";
 
 export default function UpdateAnimal() {
 
@@ -60,9 +61,10 @@ const handleSubmit = (e) => {
 
     return (
         <>
-        <div className="create-animal-form">
-            <h2>Update Animal</h2>
-            <form onSubmit={handleSubmit}>
+        <div className="update-animal-container">
+            <img className  = "update-animal-background" src="https://images.pexels.com/photos/2606532/pexels-photo-2606532.jpeg?cs=srgb&dl=pexels-tomfisk-2606532.jpg&fm=jpg" alt="background" />
+            <h2 className="update-title">Update Animal</h2>
+            <form className="update-form" onSubmit={handleSubmit}>
             <label>Animal Name
                 <input
                 type="text"
@@ -121,7 +123,7 @@ const handleSubmit = (e) => {
             </form>
 
             </div>
-            <ToastContainer position="bottom-left" autoClose={1800} hideProgressBar={false} /> 
+            <ToastContainer position="bottom-left" autoClose={1800} hideProgressBar={false}> Animal Updated! </ToastContainer> 
             </> 
         );
     }

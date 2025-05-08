@@ -165,7 +165,7 @@ button[type="submit"]:hover {
     
 }
 
-.filter {
+.form-filter {
     
     position: relative;
     top: 0px;  
@@ -174,7 +174,7 @@ button[type="submit"]:hover {
     
   }
   
-  .filter select {
+  .form-filter select {
     font-size: 1rem;
     padding: 0.2rem 0.4rem;
     background-color: rgba(255, 255, 255, 0.7);
@@ -192,11 +192,11 @@ button[type="submit"]:hover {
     transition: background-color 0.2s, border-color 0.2s;
   }
   
-  .filter select:hover {
+  .form-filter select:hover {
     background-color: rgba(240, 240, 240, 0.9);
   }
   
-  .filter select:focus {
+  .form-filter select:focus {
     outline: none;
     border-color: #6aab6a;
     background-color: #f4fff4;
