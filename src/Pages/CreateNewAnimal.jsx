@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { API_URL } from "../components/config/api";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,7 +27,6 @@ export default function CreateNewAnimal () {
     const [animalRegion, setAnimalRegion] = useState([]);
 
     const navigate = useNavigate();
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -40,19 +39,18 @@ export default function CreateNewAnimal () {
             image_Url: animalImageUrl,
             region: animalRegion,
         }
-
         axios.post(`${API_URL}/animals.json`, newAnimal)
-            .then(() => {
-                console.log("Animal added!");
-                toast.success("🎉 New animal added!");
-                 setTimeout(() => {
-                 navigate("/");
-                }, 2000); 
-            })
-            .catch((error) => {
-                console.error("Error adding animal:", error);
-            });
-
+        .then((res) => {
+          const newAnimalId = res.data.name; 
+          toast.success("🎉 New animal added!");
+          setTimeout(() => {
+            navigate(`/AnimalDetails/${newAnimalId}`);
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error("Error adding animal:", error);
+          toast.error("Failed to add your animal. Try again!");
+        });
             
  
     }
@@ -76,6 +74,7 @@ export default function CreateNewAnimal () {
                 value={animalName}
                 placeholder="What's the animal name?"
                 onChange={(e) => setAnimalName(e.target.value)}
+                required
                 />
             </label>
 
@@ -86,6 +85,7 @@ export default function CreateNewAnimal () {
                 value={animalDescription}
                 placeholder="What can you tell us about this animal?"
                 onChange={(e) => setAnimalDescription(e.target.value)}
+                required
                 />
             </label>
 
@@ -96,6 +96,7 @@ export default function CreateNewAnimal () {
                 value={animalDiet}
                 placeholder="What does this animal eat?"
                 onChange={(e) => setAnimalDiet(e.target.value)} 
+                required
                 />
             </label>
 
@@ -106,6 +107,7 @@ export default function CreateNewAnimal () {
                 value={animalHabitat}
                 placeholder="Where does this animal live?"
                 onChange={(e) => setAnimalHabitat(e.target.value)}
+                required
                 />
             </label>
 
@@ -116,6 +118,7 @@ export default function CreateNewAnimal () {
                 value={animalImageUrl}
                 placeholder="What does this animal look like?"
                 onChange={(e) => setAnimalImageUrl(e.target.value)}
+                required
                 />
             </label>
 

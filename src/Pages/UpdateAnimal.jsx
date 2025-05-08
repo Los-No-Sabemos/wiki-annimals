@@ -103,7 +103,7 @@ const handleSubmit = (e) => {
             </label>    
             <label>Animal Image URL
                 <input
-                type="text"
+                type="url"
                 name="animalImageUrl"
                 value={animalImageUrl}
                 placeholder="Animal Image URL"
