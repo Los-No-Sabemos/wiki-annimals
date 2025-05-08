@@ -155,13 +155,13 @@ button[type="submit"]:hover {
     position: relative;
     text-align: center;
     margin-left: 30%;
-    margin-top:10%;
+    margin-top:5%;
     width: 28%;
     height: 35%;
-    background-color: rgba(0, 0, 0, 0.043);
+    text-shadow: 0 0 9px rgba(33, 31, 11, 0.891);
     padding: 3rem;
     border-radius: 20px;
-    backdrop-filter: blur(2px);
+   
     
 }
 
@@ -202,10 +202,36 @@ button[type="submit"]:hover {
     background-color: #f4fff4;
   } 
 
+
+  @media (max-width: 1440px) {
+
+    h3 {
+        font-size: 1.8rem;
+        
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    .create-animal-card{
+        margin-right: 4%;
+    }
+  }
+
+
 @media (max-width: 768px) {
     .create-animal-container {
         flex-direction: column;
-        padding: 1rem;
+        
     }
     
     h3 {
@@ -251,7 +277,8 @@ button[type="submit"]:hover {
     
     .create-animal-card {
         width: 40%;
-        margin: 0 2rem;
+        margin-left: 5%;
+        margin-top: 1rem;   
     }
 
     
@@ -260,13 +287,12 @@ button[type="submit"]:hover {
 @media (min-width: 769px) and (max-width: 1024px) {
     
     .create-animal-container {
-        padding: 2rem;
+        
         gap: 2rem;
     }
     
     form {
         max-width: 100%;
-        padding: 1.8rem;
         margin-top: 4rem;
         margin-right: 20rem;
         margin-left: 5rem;
@@ -304,7 +330,7 @@ button[type="submit"]:hover {
 
 @media (max-width: 425px) {
     .create-animal-container {
-        padding: 0.8rem;
+        
         height: auto;
         min-height: 100vh;
     }
@@ -318,7 +344,6 @@ button[type="submit"]:hover {
     form {
         width: 90%;
         margin: 0 auto;
-        padding: 1.2rem;
         backdrop-filter: blur(1px);
     }
     
@@ -358,7 +383,7 @@ button[type="submit"]:hover {
     }
     
     form {
-        padding: 1rem;
+        
         width: 90%;
         margin: 0 auto;
     }
@@ -384,7 +409,7 @@ button[type="submit"]:hover {
     }
     
     form {
-        padding: 0.8rem;
+        
         width: 85%;
         
     }

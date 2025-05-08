@@ -110,15 +110,27 @@ const handleSubmit = (e) => {
                 onChange={(e) => setAnimalImageUrl(e.target.value)}
                 />
             </label>
-            <label>Animal Region
-                <input
-                type="text"
-                name="animalRegion"
-                value={animalRegion}
-                placeholder="Animal Region"
-                onChange={(e) => setAnimalRegion(e.target.value)}
-                />
-            </label>
+
+            <div className="form-filter-update">
+            <label>Region (Select one or hold "CTRL" to select more)</label>
+            <select
+              multiple
+              value={animalRegion}
+              onChange={(e) => {
+                const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+                setAnimalRegion(selectedOptions);
+              }}
+            >
+              <option value="North America">North America</option>
+              <option value="South America">South America</option>
+              <option value="Africa">Africa</option>
+              <option value="Asia">Asia</option>
+              <option value="Australia">Australia</option>
+              <option value="Europe">Europe</option>
+              <option value="Antarctica">Antarctica</option>
+            </select>
+          </div>
+
             <button type="submit">Update Animal</button>
             </form>
 

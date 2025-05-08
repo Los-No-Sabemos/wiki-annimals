@@ -121,6 +121,43 @@ button[type="submit"]:hover {
     background: #dec98a !important;
 }
 
+.form-filter-update {
+    
+    position: relative;
+    top: 0px;  
+    right: 0px;
+    z-index: 10;
+    
+  }
+  
+  .form-filter-update select {
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    color: #333;
+    width: auto;
+    max-width: 50%;
+    cursor: pointer;
+    
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    background-size: 10px;
+    padding-right: 18px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .form-filter-update select:hover {
+    background-color: rgba(240, 240, 240, 0.9);
+  }
+  
+  .form-filter-update select:focus {
+    outline: none;
+    border-color: #6aab6a;
+    background-color: #f4fff4;
+  } 
+
 
 /* Laptop 1440px */
 @media (max-width: 1440px) {
