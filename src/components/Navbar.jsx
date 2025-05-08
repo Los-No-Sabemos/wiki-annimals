@@ -11,7 +11,9 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
+      <Link to="/">
       <div className="logo">AnimalWiki</div>
+      </Link>
 
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
