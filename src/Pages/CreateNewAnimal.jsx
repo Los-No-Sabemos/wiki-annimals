@@ -134,6 +134,7 @@ export default function CreateNewAnimal () {
             >
               <option value="North America">North America</option>
               <option value="South America">South America</option>
+              <option value="Central America">Central America</option>
               <option value="Africa">Africa</option>
               <option value="Asia">Asia</option>
               <option value="Australia">Australia</option>
