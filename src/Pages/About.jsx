@@ -29,7 +29,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.6 }}
           >
             <h1>About Us</h1>
-            <p>Welcome to <span className="highlight">Animal Wikki</span>! This interactive web application showcases a collection of animals 
+            <p>Welcome to <span className="highlight">Animal Wiki</span>! This interactive web application showcases a collection of animals 
             along with interesting facts about each one. Browse through different species, learn about their habitats, diets, and unique 
             characteristics—all in one place!</p>
           </motion.div>
