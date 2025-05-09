@@ -19,7 +19,7 @@ export default function Navbar() {
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/About" onClick={() => setIsOpen(false)}>About</Link>
         <Link to="/CreateNewAnimal" onClick={() => setIsOpen(false)}>Add Your Animal</Link>
-        <Link to="/WikkiDictionary" onClick={() => setIsOpen(false)}>Wikki Dictionary</Link>
+        <Link to="/WikkiDictionary" onClick={() => setIsOpen(false)}>Wiki Dictionary</Link>
       </div>
 
       <div className="hamburger" onClick={toggleMenu}>
