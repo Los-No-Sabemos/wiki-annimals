@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link href="/">
+      <Link to="/">
       <div className="logo">AnimalWiki</div>
       </Link>
 
