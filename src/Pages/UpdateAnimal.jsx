@@ -51,7 +51,7 @@ const handleSubmit = (e) => {
             console.log("Animal updated!");
             toast.success("🎉 Animal updated!");
             setTimeout(() => {
-            navigate("/");
+            navigate(`/AnimalDetails/${id}`);
             }, 2000); 
         })
         .catch((error) => {

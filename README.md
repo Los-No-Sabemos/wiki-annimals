@@ -1,12 +1,57 @@
-# React + Vite
+Animal Wiki
+Description
+Animal Wiki is a responsive web application built with React.js that serves as an encyclopedia for animals. It includes:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A carousel slider on the homepage showcasing featured animals.
 
-Currently, two official plugins are available:
+A lexical page listing all animals in the project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A filter by region to help users easily find animals based on geography.
 
-## Expanding the ESLint configuration
+Full CRUD functionality for managing animal data.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Smooth animations using Framer Motion.
+
+API handling with Axios and user-friendly notifications using React Toastify.
+
+All animal data is stored in Firebase, and access requires an API key and other environment credentials.
+
+🚀 Getting Started
+Follow the steps below to run the app locally on your computer:
+
+1. Clone the repository
+bash
+Copier
+Modifier
+git clone https://github.com/Los-No-Sabemos/wiki-annimals
+cd animal-wiki
+2. Install dependencies
+Make sure Node.js is installed, then run:
+
+bash
+Copier
+Modifier
+npm install
+
+3. Run the development server
+bash
+Copier
+Modifier
+npm run dev
+Open your browser and go to http://localhost:5173 (or as specified in the terminal) to view the app.
+
+🌐 Demo
+[ Live Demo on Netlify ](https://wikki-animals.netlify.app/)
+
+📁 Resources
+React.js
+
+React Router DOM
+
+Framer Motion
+
+Axios
+
+React Toastify
+
+Firebase

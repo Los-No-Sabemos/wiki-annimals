@@ -55,7 +55,6 @@ export default function AnimalDetails() {
                     <p>Habitat: {animal.habitat}</p>
                     <p>Diet: {animal.diet}</p>
                     <p>Region: {animal.region}</p>
-                    <p className="animal-fact">Fun Fact: {animal.fact}</p>
                     <div className="animal-buttons">
                         <button className="btn update-btn" onClick={handleUpdate}>Update</button>
                         <button className="btn delete-btn" onClick={handleDelete}>Delete</button>
