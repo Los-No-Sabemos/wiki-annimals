@@ -56,7 +56,7 @@ export default function WikkiDictionary() {
         src="https://cdn.pixabay.com/video/2021/10/07/91186-626005206_tiny.jpg"
         alt="Background" />
 
-      <h1>Wikki Dictionary</h1>
+      <h1>Wiki Dictionary</h1>
       <h2>Find your animal here: </h2>
       <div>
         {animals.map((animal, index) => {
