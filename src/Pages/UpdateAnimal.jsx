@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
     axios.put(`${API_URL}/animals/${id}.json`, updatedAnimal)
         .then(response => {
             console.log("Animal updated!");
-            toast.success("🎉 New animal added!");
+            toast.success("🎉 Animal updated!");
             setTimeout(() => {
             navigate(`/AnimalDetails/${id}`);
             }, 2000); 
